@@ -103,6 +103,9 @@ var MasonryLayoutManager = /** @class */ (function (_super) {
             lowestColumnIdx = this.findIndexOfLowestValue(lowestColumnArray);
             this.totalHeight = this.findHighestValue(lowestColumnArray);
         }
+        if (oldItemCount > itemCount) {
+            this.layouts.splice(itemCount, oldItemCount - itemCount);
+        }
     };
     MasonryLayoutManager.prototype.getColumnOf = function (layout) {
         var xpos = this.xStartArray;

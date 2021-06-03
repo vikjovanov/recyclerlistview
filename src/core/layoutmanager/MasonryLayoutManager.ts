@@ -124,6 +124,9 @@ export class MasonryLayoutManager extends LayoutManager {
 
             this.totalHeight = this.findHighestValue(lowestColumnArray);
         }
+        if (oldItemCount > itemCount) {
+            this.layouts.splice(itemCount, oldItemCount - itemCount);
+        }
     }
 
     private getColumnOf(layout: Layout): number {
